@@ -1,0 +1,142 @@
+# Simple Inventory Management System with Zenity
+
+## Project Overview
+A user-friendly graphical interface inventory management system will be developed using Zenity tools, supporting operations such as product addition, listing, updating, and deletion. The code must be uploaded publicly to a GITHUB repository. The system's usage should be explained with screenshots in the "Readme.md" file in the GITHUB repository. A 3-4 minute usage video (screen recording with your voice) should be uploaded to Youtube or another video platform and shared in the readme.md. The GITHUB repository link should be uploaded to e-campus.
+
+## Core Functions
+
+### 1. User Roles
+- Administrator
+- User
+
+### 2. Data Storage
+- inventory.csv
+- users.csv
+- log.csv
+
+### 3. Main Menu
+1. Add Product
+2. List Products
+3. Update Product
+4. Delete Product
+5. Generate Reports
+   - Low Stock Products (Threshold value required)
+   - Highest Stock Products (Threshold value required)
+6. User Management
+   - Add New User
+   - List Users
+   - Update User
+   - Delete User
+7. Program Management
+   - Show Disk Space (.sh + inventory.csv + users.csv + log.csv)
+   - Backup to Disk (inventory.csv + users.csv)
+   - Show Error Logs (log.csv)
+8. Exit
+
+## System Rules
+
+### A. CSV File Control
+- System should automatically create empty files if CSV files don't exist
+- Product number should be automatically incremented and unique
+
+### B. Data Validation
+- Stock quantity and unit price must be positive numbers (0 included)
+- Product names and categories should not contain spaces
+- Show success messages using Zenity's --info option
+- Use --error option for invalid entries and log to log.csv
+- Prevent duplicate product names
+- Require confirmation for critical operations using --question
+- Use Zenity --progress for operation status
+
+### C. User Roles
+- Administrator: Can add, update, delete products and manage users
+- User: Can only view products and generate reports
+- Warning should be given for unauthorized actions
+
+### D. Operation Specifications
+
+#### Add Product
+- Use Zenity's --forms option to collect product information (name, stock quantity, unit price)
+- Input should be written to CSV file
+
+#### List Products
+- Display inventory using Zenity's --text-info option
+- Read and present data from CSV file in text format
+
+#### Update Product
+- Get product name using Zenity's --entry option
+- Search product number in CSV file and if found:
+  - Request new values for stock or price
+  - Write updated information to file
+
+#### Delete Product
+- Request product name from user
+- Remove relevant product from CSV file
+
+#### Exit
+- Show simple confirmation window when user wants to exit
+
+### E. Password Management
+- Administrator can reset passwords
+- Account locks after 3 failed login attempts
+- Administrator can unlock locked accounts
+- Log all incidents to log.csv
+
+## Interface Screens
+
+### 1. Login
+- Username and Password
+
+### 2. Add Product
+- Product Number, Name, Stock Quantity, Unit Price, Category
+
+### 3. List Products
+- Product Number, Name, Stock Quantity, Unit Price, Category
+
+### 4. Update Product
+- Product Name, Stock Quantity, Unit Price, Category
+
+### 5. Delete Product
+- Product Number or Name
+
+### 6. Generate Reports
+- Low Stock Products
+- Highest Stock Products
+
+### 7. User Management
+- Add New User (No, Name, Surname, Role, MD5 Password)
+- List Users
+- Update User (Name, Surname, Role, Password)
+- Delete User
+
+### 8. Program Management
+- Show Disk Usage
+- Create Backup
+- View Error Logs
+
+### 9. Exit
+
+## Evaluation Questions
+(To be answered in Q&A format at the end of the video)
+
+1. What was the biggest technical challenge during the project and how did you solve it?
+2. Which aspect of using Zenity was most challenging?
+3. What steps did you take to solve problems when encountering errors?
+4. Did you consider that products could have the same name but be in different categories?
+5. How did you prevent data loss if a user unexpectedly closes the program?
+
+## Evaluation Criteria
+1. Functional Accuracy (30 points)
+2. User Interface (15 points)
+3. Technical Competency (15 points)
+4. Creativity and Additional Features (10 points)
+5. Inventory Management System Publication (30 points)
+
+## Resources
+- Zenity manual
+- Zenity example forms
+- Turkish resources
+- Examples and tutorials
+- Additional project examples
+
+**Note:** All implementation must be original. Projects with more than 50% similarity will be considered plagiarism and will receive zero points.
